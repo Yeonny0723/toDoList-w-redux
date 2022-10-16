@@ -1,6 +1,6 @@
 import {useState, useEffect} from "react";
 import {connect} from "react-redux";
-import { actionCreators } from "../store";
+import { add } from "../store";
 import ToDo from "../components/ToDo";
 
 const Home = ({ toDos, addToDo }) => {
@@ -43,7 +43,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   // 유저가 컴포넌트에서 addToDo를 입력하면 디스패치함수 출력
     return {
-        addToDo: (text) => dispatch(actionCreators.addToDo(text))
+        addToDo: (text) => dispatch(add(text))
     }
 }
 
